@@ -1,8 +1,15 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter width: ");
+        double width = scanner.nextDouble();
+        System.out.println("Enter a high: ");
+        double height = scanner.nextDouble();
+        System.out.println(area(width, height));
     }
 
 //Firs Method => Havlayan Köpeğimiz
@@ -54,12 +61,18 @@ public class Main {
 
     //Fourth Method => Alan Hesaplama
     public static double area(double width, double height) {
+        /* Alternatif => Scannersız
         double rectangleArea = width * height;
         if (width < 0 || height < 0){
             return -1;
         }else {
             return rectangleArea;
+        }*/
+        if (width < 0 || height < 0){
+            System.out.println("Width or Height less than zero");
+            return -1;
         }
+        return width * height;
     }
 
 //***************************************************************************************
